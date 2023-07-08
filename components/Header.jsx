@@ -85,7 +85,7 @@ function classNames(...classes) {
 
 export default function Header() {
   return (
-    <Popover className="fixed top-0 left-0 right-0 bg-transparent z-50 backdrop-blur-sm">
+    <Popover className="fixed top-0 left-0 right-0 bg-primary z-50 backdrop-blur-sm">
       <div className="pointer-events-none fixed absolute inset-0 bg-transparent z-30 shadow duration-200" aria-hidden="true" />
       <div className="relative z-20">
         <div className="mx-auto flex max-w-7xl items-center justify-between py-5 px-6 sm:py-4 md:justify-start md:space-x-10 lg:px-8">

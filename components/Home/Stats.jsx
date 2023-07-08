@@ -33,10 +33,10 @@ export default function Stats() {
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Write emails that sell.
           </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
+          {/* <p className="mt-6 text-lg leading-8 text-gray-600">
             Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
             accusamus quisquam.
-          </p>
+          </p> */}
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-16 lg:mt-16 lg:max-w-none">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
@@ -51,11 +51,11 @@ export default function Stats() {
                 </dt>
                 <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-600">
                   <p className="flex-auto">{feature.description}</p>
-                  <p className="mt-6">
+                  {/* <p className="mt-6">
                     <a href={feature.href} className="text-base font-semibold leading-7 text-primary">
                       Get started <span aria-hidden="true">→</span>
                     </a>
-                  </p>
+                  </p> */}
                 </dd>
               </div>
             ))}

@@ -1,10 +1,11 @@
 import Header from '../components/Header'
-import Hero from '../components/Hero'
+import Hero from '../components/Home/Hero'
 import Feature from '../components/Feature'
 import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
-import Stats from '../components/Stats'
+import Stats from '../components/Home/Stats'
 import Testimonials from '../components/Testimonials'
 import Footer from '../components/Footer'
+import FAQs from '../components/Home/FAQs'
 
 
 const features = [
@@ -43,6 +44,7 @@ export default function Home() {
       ))}
       <Stats />
       <Testimonials />
+      <FAQs/>
       <Footer />
     </main>
   )
