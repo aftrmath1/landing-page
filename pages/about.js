@@ -1,16 +1,18 @@
 import React from 'react'
 import Header from '../components/Header'
-import PricingBody from '../components/Pricing'
+import Hero from '../components/About/Hero'
+import Vision from '../components/About/Vision'
 import Footer from '../components/Footer'
 
-const Pricing = () => {
+const About = () => {
   return (
     <div>
         <Header />
-        <PricingBody />
+        <Hero />
+        <Vision />
         <Footer />
     </div>
   )
 }
 
-export default Pricing
+export default About
