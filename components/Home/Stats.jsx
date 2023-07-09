@@ -45,7 +45,7 @@ export default function Stats() {
                 <dt className="text-xl font-semibold leading-7 text-gray-900">
                   {feature.name}
                 </dt>
-                <dt className="flex items-center space-x-5 font-bold text-5xl my-5">
+                <dt className="flex items-center space-x-5 font-bold text-5xl my-5 bg-gradient-to-r from-indigo-700 to-purple-400 bg-clip-text text-transparent">
                     <h1>5x</h1>
                     {feature.increase ? <FiTrendingUp /> : <FiTrendingDown />}
                 </dt>
