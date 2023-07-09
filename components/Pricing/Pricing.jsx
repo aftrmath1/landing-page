@@ -99,7 +99,7 @@ export default function PricingBody() {
               Pricing plans for teams of&nbsp;all&nbsp;sizes
             </p>
           </div>
-          <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-300">
+          <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-white">
             Choose an affordable plan that’s packed with the best features for
             engaging your audience, creating customer loyalty, and driving
             sales.
