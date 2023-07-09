@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../components/Header'
-import PricingBody from '../components/Pricing'
+import PricingBody from '../components/Pricing/Pricing'
 import Footer from '../components/Footer'
 
 const Pricing = () => {

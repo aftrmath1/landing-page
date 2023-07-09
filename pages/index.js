@@ -1,11 +1,12 @@
 import Header from '../components/Header'
 import Hero from '../components/Home/Hero'
-import Feature from '../components/Feature'
+import Feature from '../components/Home/Feature'
 import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
 import Stats from '../components/Home/Stats'
-import Testimonials from '../components/Testimonials'
+import Testimonials from '../components/Home/Testimonials'
 import Footer from '../components/Footer'
 import FAQs from '../components/Home/FAQs'
+import JoinForm from '../components/Home/JoinForm'
 
 
 const features = [
