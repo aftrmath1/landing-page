@@ -4,6 +4,7 @@ import { FiTrendingDown, FiTrendingUp } from 'react-icons/fi'
 const features = [
   {
     name: 'Composition Time',
+    value: 10,
     description:
       'Non quo aperiam repellendus quas est est. Eos aut dolore aut ut sit nesciunt. Ex tempora quia. Sit nobis consequatur dolores incidunt.',
     href: '#',
@@ -11,6 +12,7 @@ const features = [
   },
   {
     name: 'Reply Rate',
+    value: 3,
     description:
       'Vero eum voluptatem aliquid nostrum voluptatem. Vitae esse natus. Earum nihil deserunt eos quasi cupiditate. A inventore et molestiae natus.',
     href: '#',
@@ -18,6 +20,7 @@ const features = [
   },
   {
     name: 'Sales Rate',
+    value: 8,
     description:
       'Et quod quaerat dolorem quaerat architecto aliquam accusantium. Ex adipisci et doloremque autem quia quam. Quis eos molestiae at iure impedit.',
     href: '#',
@@ -27,16 +30,12 @@ const features = [
 
 export default function Stats() {
   return (
-    <div className="bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0">
+    <div className="py-24 sm:py-32 max-w-7xl mx-auto">
+      <div className="">
+        <div className="">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Write emails that sell.
           </h2>
-          {/* <p className="mt-6 text-lg leading-8 text-gray-600">
-            Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
-            accusamus quisquam.
-          </p> */}
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-16 lg:mt-16 lg:max-w-none">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
@@ -45,17 +44,16 @@ export default function Stats() {
                 <dt className="text-xl font-semibold leading-7 text-gray-900">
                   {feature.name}
                 </dt>
-                <dt className="flex items-center space-x-5 font-bold text-5xl my-5 bg-gradient-to-r from-indigo-700 to-purple-400 bg-clip-text text-transparent">
-                    <h1>5x</h1>
-                    {feature.increase ? <FiTrendingUp /> : <FiTrendingDown />}
-                </dt>
-                <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto">{feature.description}</p>
-                  {/* <p className="mt-6">
-                    <a href={feature.href} className="text-base font-semibold leading-7 text-primary">
-                      Get started <span aria-hidden="true">→</span>
-                    </a>
-                  </p> */}
+                <div className="mt-1 flex items-center space-x-5">
+                  <h1 className="text-5xl font-bold text-primary">{feature.value}x</h1>
+                  {feature.increase ? (
+                    <FiTrendingUp className="text-indigo-700 text-4xl" />
+                  ) : (
+                    <FiTrendingDown className="text-red-500 text-4xl" />
+                  )}
+                </div>
+                <dd className="mt-5 text-base leading-7 text-accent">
+                  <p>{feature.description}</p>
                 </dd>
               </div>
             ))}
@@ -63,5 +61,5 @@ export default function Stats() {
         </div>
       </div>
     </div>
-  )
+  );
 }

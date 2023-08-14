@@ -2,13 +2,13 @@ import { CameraIcon } from '@heroicons/react/20/solid'
 
 export default function Vision() {
     return (
-        <div className="overflow-hidden bg-primary">
+        <div className="overflow-hidden">
             <div className="relative mx-auto max-w-7xl py-16 px-6 lg:px-8">
                 <div className="absolute top-0 bottom-0 left-3/4 hidden w-screen bg-gray-primary lg:block" />
                 <div className="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-8">
                     <div>
                         <h2 className="text-lg font-semibold text-gray-200">Our Vision</h2>
-                        <h3 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-white sm:text-4xl">You can be lean, and still execute at scale. It's possible.</h3>
+                        <h3 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-black sm:text-4xl">You can be lean, and still execute at scale. It's possible.</h3>
                     </div>
                 </div>
                 <div className="mt-8 lg:grid lg:grid-cols-2 lg:gap-8">
@@ -54,7 +54,7 @@ export default function Vision() {
                         </div>
                     </div> */}
                     <div className="mt-8 lg:mt-0">
-                        <div className="mx-auto space-y-5 max-w-prose text-lg text-white lg:max-w-none">
+                        <div className="mx-auto space-y-5 max-w-prose text-lg text-black lg:max-w-none">
                             <p>
                                 In the age of startups and innovative small businesses, we understand that what matters isn't the size of your team, but the power of your execution. And we are committed to making that possible with Pipeline.
                             </p>
@@ -62,8 +62,8 @@ export default function Vision() {
                             We're reshaping the future of sales, one small business at a time. That's our promise. That's our mission. Join us in rewriting the rules of the game.
                             </p>
                         </div>
-                        <div className="prose prose-indigo mx-auto mt-5 text-white lg:col-start-1 lg:row-start-1 lg:max-w-none">
-                            <h1 className="text-white text-6xl">Welcome to Pipeline, where less is truly more.</h1>
+                        <div className="prose prose-indigo mx-auto mt-5 text-black lg:col-start-1 lg:row-start-1 lg:max-w-none">
+                            <h1 className="text-black text-6xl">Welcome to Pipeline, where less is truly more.</h1>
                         </div>
                     </div>
                 </div>

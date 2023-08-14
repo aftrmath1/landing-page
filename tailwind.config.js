@@ -11,12 +11,23 @@ module.exports = {
         primary: "#5E17EB",
         background: "#F4F0FF",
         accent: "#35465f",
-      }
+      },
     },
   },
+  daisyui: {
+    themes: [
+      {
+        main: {
+          primary: "#5E17EB",
+          // background: "#F4F0FF",
+          accent: "#35465f",
+        },
+      },
+    ],
+  },
   plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/aspect-ratio'),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/aspect-ratio"),
+    require("daisyui"),
   ],
-}
-
+};

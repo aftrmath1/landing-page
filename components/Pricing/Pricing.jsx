@@ -1,7 +1,15 @@
 import { useState } from "react";
 import { Dialog, RadioGroup } from "@headlessui/react";
 import { CheckIcon } from "@heroicons/react/20/solid";
-import Stripe from "stripe";
+import { loadStripe } from "@stripe/stripe-js";
+
+let stripePromise;
+const getStripe = () => {
+  if (!stripePromise) {
+    stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
+  }
+  return stripePromise;
+};
 
 const pricing = {
   frequencies: [
@@ -10,8 +18,8 @@ const pricing = {
   ],
   tiers: [
     {
-      name: "Freelancer",
-      id: "tier-freelancer",
+      name: "Starter",
+      productId: "prod_ODjk3tWXhIuy5r",
       href: "#",
       price: { monthly: "$15", annually: "$144" },
       description: "The essentials to provide your best work for clients.",
@@ -21,11 +29,12 @@ const pricing = {
         "Basic analytics",
         "48-hour support response time",
       ],
+      priceId: "price_1NRIHEKQQyy4BdVzqnVYnRAq",
       mostPopular: false,
     },
     {
-      name: "Startup",
-      id: "tier-startup",
+      name: "Growth",
+      productId: "prod_ODjmMknxjs2UeX",
       href: "#",
       price: { monthly: "$30", annually: "$288" },
       description: "A plan that scales with your rapidly growing business.",
@@ -36,11 +45,12 @@ const pricing = {
         "24-hour support response time",
         "Marketing automations",
       ],
+      priceId: "price_1NRIIVKQQyy4BdVzoWLPH3Jd",
       mostPopular: true,
     },
     {
-      name: "Enterprise",
-      id: "tier-enterprise",
+      name: "Hypergrowth",
+      productId: "prod_ODjmmKs88eIRk4",
       href: "#",
       price: { monthly: "$48", annually: "$576" },
       description: "Dedicated support and infrastructure for your company.",
@@ -52,18 +62,11 @@ const pricing = {
         "Marketing automations",
         "Custom reporting tools",
       ],
+      priceId: "price_1NRIIyKQQyy4BdVzEsrA92so",
       mostPopular: false,
     },
   ],
 };
-const faqs = [
-  {
-    id: 1,
-    question: "What's the best thing about Switzerland?",
-    answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-  },
-];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -73,42 +76,58 @@ export default function PricingBody() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [frequency, setFrequency] = useState(pricing.frequencies[0]);
 
-  const handleBuyPlanClick = async (productId, priceId) => {
+  const handleBuyPlanClick = async tier => {
     const res = await fetch("/api/stripe-session", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ productId, priceId }),
+      body: JSON.stringify({
+        productId: tier.productId,
+        priceId: tier.priceId,
+        userId: "iOrJ2z7ABYgDy8gSgTnOaoDOWPH3",
+      }),
     });
 
     const { sessionId } = await res.json();
-
-    const stripe = Stripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
-    await stripe.redirectToCheckout({ sessionId });
+    const stripe = await getStripe();
+    await stripe.redirectToCheckout({
+      lineItems: [
+        {
+          price: tier.priceId,
+          quantity: 1,
+        },
+      ],
+      mode: "subscription",
+      successUrl: `${window.location.origin}/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancelUrl: `${window.location.origin}/failed`,
+      clientReferenceId: "iOrJ2z7ABYgDy8gSgTnOaoDOWPH3",
+      sessionId: sessionId,
+    });
   };
 
   return (
-    <div className="bg-primary pb-32">
+    <div className="pb-32">
       <main>
         {/* Pricing section */}
-        <div className="mx-auto max-w-7xl px-6 pt-32 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            {/* <h1 className="text-base font-semibold leading-7 text-indigo-400">Pricing</h1> */}
-            <p className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+
+          {/* <div className="mx-auto max-w-4xl text-center">
+            <p className="mt-2 text-4xl font-bold tracking-tight text-black sm:text-5xl">
               Pricing plans for teams of&nbsp;all&nbsp;sizes
             </p>
-          </div>
-          <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-white">
-            Choose an affordable plan that’s packed with the best features for
-            engaging your audience, creating customer loyalty, and driving
-            sales.
-          </p>
+            <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-accent">
+              Choose an affordable plan that’s packed with the best features for
+              engaging your audience, creating customer loyalty, and driving
+              sales.
+            </p>
+          </div> */}
+
           <div className="mt-16 flex justify-center">
             <RadioGroup
               value={frequency}
               onChange={setFrequency}
-              className="grid grid-cols-2 gap-x-1 rounded-full bg-white/5 p-1 text-center text-xs font-semibold leading-5 text-white"
+              className="grid grid-cols-2 gap-x-1 rounded-full bg-black p-1 text-center text-xs font-semibold leading-5 text-white"
             >
               <RadioGroup.Label className="sr-only">
                 Payment frequency
@@ -119,7 +138,7 @@ export default function PricingBody() {
                   value={option}
                   className={({ checked }) =>
                     classNames(
-                      checked ? "bg-indigo-500" : "",
+                      checked ? "bg-gray-600" : "",
                       "cursor-pointer rounded-full px-2.5 py-1"
                     )
                   }
@@ -133,34 +152,37 @@ export default function PricingBody() {
             {pricing.tiers.map(tier => (
               <div
                 key={tier.id}
-                className={classNames(
-                  tier.mostPopular
-                    ? "bg-white/5 ring-2 ring-indigo-500"
-                    : "ring-1 ring-white/10",
-                  "rounded-3xl p-8 xl:p-10"
-                )}
+                // className={classNames(
+                //   tier.mostPopular
+                //     ? "bg-white/5 ring-2 ring-indigo-500"
+                //     : "ring-1 ring-white/10",
+                //   "rounded-3xl p-8 xl:p-10"
+                // )}
+                className={
+                  "relative p-8 border border-gray-300 rounded-2xl shadow-sm flex flex-col"
+                }
               >
                 <div className="flex items-center justify-between gap-x-4">
                   <h2
                     id={tier.id}
-                    className="text-lg font-semibold leading-8 text-white"
+                    className="text-lg font-semibold leading-8 text-black"
                   >
                     {tier.name}
                   </h2>
                   {tier.mostPopular ? (
-                    <p className="rounded-full bg-indigo-500 px-2.5 py-1 text-xs font-semibold leading-5 text-white">
+                    <p className="rounded-full bg-primary px-2.5 py-1 text-xs font-semibold leading-5 text-white">
                       Most popular
                     </p>
                   ) : null}
                 </div>
-                <p className="mt-4 text-sm leading-6 text-gray-300">
+                <p className="mt-4 text-sm leading-6 text-gray-500">
                   {tier.description}
                 </p>
                 <p className="mt-6 flex items-baseline gap-x-1">
-                  <span className="text-4xl font-bold tracking-tight text-white">
+                  <span className="text-4xl font-bold tracking-tight text-primary">
                     {tier.price[frequency.value]}
                   </span>
-                  <span className="text-sm font-semibold leading-6 text-gray-300">
+                  <span className="text-sm font-semibold leading-6 text-gray-500">
                     {frequency.priceSuffix}
                   </span>
                 </p>
@@ -169,9 +191,9 @@ export default function PricingBody() {
                   aria-describedby={tier.id}
                   className={classNames(
                     tier.mostPopular
-                      ? "bg-indigo-500 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline-indigo-500"
-                      : "bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white",
-                    "mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                      ? "bg-black text-white shadow-sm hover:opacity-50 focus-visible:outline-primary"
+                      : "bg-black hover:opacity-50 text-white focus-visible:outline-white",
+                    "mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 duration-300"
                   )}
                   onClick={() =>
                     handleBuyPlanClick(tier.productId, tier.priceId)
@@ -186,10 +208,10 @@ export default function PricingBody() {
                   {tier.features.map(feature => (
                     <li key={feature} className="flex gap-x-3">
                       <CheckIcon
-                        className="h-6 w-5 flex-none text-white"
+                        className="h-6 w-5 flex-none text-green-500"
                         aria-hidden="true"
                       />
-                      {feature}
+                      <p className="text-gray-500">{feature}</p>
                     </li>
                   ))}
                 </ul>

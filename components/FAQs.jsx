@@ -10,16 +10,19 @@ const faqs = [
   },
   {
     question: "Who is pipeline for?",
-    answer: "Pipeline is the ideal solution for businesses seeking to avoid the high costs associated with hiring expensive sales representatives and investing in multiple software tools. With our service, you can effortlessly book sales meetings and create brand awareness without the hefty price tag of over $100,000 per year."
+    answer:
+      "Pipeline is the ideal solution for businesses seeking to avoid the high costs associated with hiring expensive sales representatives and investing in multiple software tools. With our service, you can effortlessly book sales meetings and create brand awareness without the hefty price tag of over $100,000 per year.",
   },
   {
     question: "How simple is it to use and to train my team to use?",
-    answer: "Finding the right sales tool is crucial for maximizing productivity and efficiency. While many software tools may appear feature-rich, it's essential to choose a powerful yet intuitive solution that enables your team to accomplish more in less time. Avoiding overly complex tools that require months of training ensures that you can save valuable time and maintain high levels of productivity."
+    answer:
+      "Finding the right sales tool is crucial for maximizing productivity and efficiency. While many software tools may appear feature-rich, it's essential to choose a powerful yet intuitive solution that enables your team to accomplish more in less time. Avoiding overly complex tools that require months of training ensures that you can save valuable time and maintain high levels of productivity.",
   },
   {
     question: "Can Pipeline grow my business?",
-    answer: "One often overlooked aspect when evaluating sales tools is their scalability to accommodate business growth. While you may be a startup currently, selecting a sales tool that can adapt and support your expanding needs is vital. A reliable sales tool can propel your business to reach targets faster than anticipated, regardless of your current stage."
-  }
+    answer:
+      "One often overlooked aspect when evaluating sales tools is their scalability to accommodate business growth. While you may be a startup currently, selecting a sales tool that can adapt and support your expanding needs is vital. A reliable sales tool can propel your business to reach targets faster than anticipated, regardless of your current stage.",
+  },
 ];
 
 function classNames(...classes) {

@@ -1,102 +1,76 @@
-import { Fragment } from 'react'
-import { Popover, Transition } from '@headlessui/react'
+import { Fragment } from "react";
+import { Popover, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
-  BookmarkSquareIcon,
-  BriefcaseIcon,
-  BuildingOfficeIcon,
   ChartBarIcon,
-  CheckCircleIcon,
-  ComputerDesktopIcon,
   CursorArrowRaysIcon,
-  GlobeAltIcon,
-  InformationCircleIcon,
-  NewspaperIcon,
-  PhoneIcon,
-  PlayIcon,
   ShieldCheckIcon,
   Squares2X2Icon,
-  UserGroupIcon,
-  XMarkIcon,
-} from '@heroicons/react/24/outline'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
+} from "@heroicons/react/24/outline";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import Link from "next/link";
+import XMarkIcon from "@heroicons/react/20/solid";
 
 const solutions = [
   {
-    name: 'Analytics',
-    description: 'Get a better understanding of where your traffic is coming from.',
-    href: '#',
+    name: "Analytics",
+    description:
+      "Get a better understanding of where your traffic is coming from.",
+    href: "#",
     icon: ChartBarIcon,
   },
   {
-    name: 'Engagement',
-    description: 'Speak directly to your customers in a more meaningful way.',
-    href: '#',
+    name: "Engagement",
+    description: "Speak directly to your customers in a more meaningful way.",
+    href: "#",
     icon: CursorArrowRaysIcon,
   },
-  { name: 'Security', description: "Your customers' data will be safe and secure.", href: '#', icon: ShieldCheckIcon },
   {
-    name: 'Integrations',
+    name: "Security",
+    description: "Your customers' data will be safe and secure.",
+    href: "#",
+    icon: ShieldCheckIcon,
+  },
+  {
+    name: "Integrations",
     description: "Connect with third-party tools that you're already using.",
-    href: '#',
+    href: "#",
     icon: Squares2X2Icon,
   },
-]
-const callsToAction = [
-  { name: 'Watch Demo', href: '#', icon: PlayIcon },
-  { name: 'View All Products', href: '#', icon: CheckCircleIcon },
-  { name: 'Contact Sales', href: '#', icon: PhoneIcon },
-]
-const company = [
-  { name: 'About', href: '#', icon: InformationCircleIcon },
-  { name: 'Customers', href: '#', icon: BuildingOfficeIcon },
-  { name: 'Press', href: '#', icon: NewspaperIcon },
-  { name: 'Careers', href: '#', icon: BriefcaseIcon },
-  { name: 'Privacy', href: '#', icon: ShieldCheckIcon },
-]
-const resources = [
-  { name: 'Community', href: '#', icon: UserGroupIcon },
-  { name: 'Partners', href: '#', icon: GlobeAltIcon },
-  { name: 'Guides', href: '#', icon: BookmarkSquareIcon },
-  { name: 'Webinars', href: '#', icon: ComputerDesktopIcon },
-]
-const blogPosts = [
+];
+
+const links = [
   {
-    id: 1,
-    name: 'Boost your conversion rate',
-    href: '#',
-    preview: 'Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1558478551-1a378f63328e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2849&q=80',
+    name: "About",
+    href: "/about",
   },
   {
-    id: 2,
-    name: 'How to use search engine optimization to drive traffic to your site',
-    href: '#',
-    preview: 'Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2300&q=80',
+    name: "Pricing",
+    href: "/pricing",
   },
-]
+  {
+    name: "Contact",
+    href: "mailto:support@buildpipeline.ai",
+  },
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Header() {
   return (
-    <Popover className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm">
-      <div className="pointer-events-none fixed absolute inset-0 bg-transparent z-30 shadow duration-200" aria-hidden="true" />
+    <Popover className="bg-white">
+      <div
+        className="pointer-events-none fixed absolute inset-0 bg-transparent z-30 duration-200"
+        aria-hidden="true"
+      />
       <div className="relative z-20">
         <div className="mx-auto flex max-w-7xl items-center justify-between py-5 px-6 sm:py-4 md:justify-start md:space-x-10 lg:px-8">
           <div>
             <a href="/" className="flex">
               <span className="sr-only">Your Company</span>
-              <img
-                className="h-8 w-auto sm:h-10"
-                src="/logowhite.png"
-                alt=""
-              />
+              <img className="h-8 w-auto sm:h-10" src="/logo.png" alt="" />
             </a>
           </div>
           <div className="-my-2 -mr-2 md:hidden">
@@ -107,20 +81,20 @@ export default function Header() {
           </div>
           <div className="hidden md:flex md:flex-1 md:items-center md:justify-between">
             <Popover.Group as="nav" className="flex space-x-10">
-              <Popover>
+              {/* <Popover>
                 {({ open }) => (
                   <>
                     <Popover.Button
                       className={classNames(
-                        open ? 'text-white' : 'text-white',
-                        'group inline-flex items-center rounded-md text-base font-medium hover:text-white focus:outline-none'
+                        open ? "text-white" : "text-white",
+                        "group inline-flex items-center rounded-md text-base font-medium hover:text-white focus:outline-none"
                       )}
                     >
                       <span>Solutions</span>
                       <ChevronDownIcon
                         className={classNames(
-                          open ? 'text-gray-600' : 'text-gray-400',
-                          'ml-2 h-5 w-5 group-hover:text-gray-500'
+                          open ? "text-gray-600" : "text-gray-400",
+                          "ml-2 h-5 w-5 group-hover:text-gray-500"
                         )}
                         aria-hidden="true"
                       />
@@ -146,13 +120,20 @@ export default function Header() {
                               <div className="flex md:h-full lg:flex-col">
                                 <div className="flex-shrink-0">
                                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-primary text-white sm:h-12 sm:w-12">
-                                    <item.icon className="h-6 w-6" aria-hidden="true" />
+                                    <item.icon
+                                      className="h-6 w-6"
+                                      aria-hidden="true"
+                                    />
                                   </span>
                                 </div>
                                 <div className="ml-4 md:flex md:flex-1 md:flex-col md:justify-between lg:ml-0 lg:mt-4">
                                   <div>
-                                    <p className="text-base font-medium text-black">{item.name}</p>
-                                    <p className="mt-1 text-sm text-gray-500">{item.description}</p>
+                                    <p className="text-base font-medium text-black">
+                                      {item.name}
+                                    </p>
+                                    <p className="mt-1 text-sm text-gray-500">
+                                      {item.description}
+                                    </p>
                                   </div>
                                   <p className="mt-2 text-sm font-medium text-indigo-600 lg:mt-4">
                                     Learn more
@@ -169,9 +150,12 @@ export default function Header() {
                               <div key={item.name} className="flow-root">
                                 <a
                                   href={item.href}
-                                  className="-m-3 flex items-center rounded-md p-3 text-base font-medium text-white hover:bg-gray-100"
+                                  className="-m-3 flex items-center rounded-md p-3 text-base font-medium text-black hover:bg-gray-100"
                                 >
-                                  <item.icon className="h-6 w-6 flex-shrink-0 text-gray-400" aria-hidden="true" />
+                                  <item.icon
+                                    className="h-6 w-6 flex-shrink-0 text-gray-400"
+                                    aria-hidden="true"
+                                  />
                                   <span className="ml-3">{item.name}</span>
                                 </a>
                               </div>
@@ -182,23 +166,27 @@ export default function Header() {
                     </Transition>
                   </>
                 )}
-              </Popover>
-              <a href="/pricing" className="text-base font-medium text-white hover:text-white">
-                Pricing
-              </a>
-              <a href="/about" className="text-base font-medium text-white hover:text-white">
-                About
-              </a>
+              </Popover> */}
+              {links.map(link => {
+                return (
+                  <Link
+                    href={link.href}
+                    className="text-base font-semibold text-primary"
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
             </Popover.Group>
             <div className="flex items-center md:ml-12">
-              <a href="#" className="text-base font-medium text-gray-100 hover:text-white">
+              <a href="/login" className="text-base font-semibold text-primary">
                 Sign in
               </a>
               <a
-                href="#"
-                className="ml-8 inline-flex items-center justify-center rounded-md border border-transparent text-base px-4 py-2 font-medium text-primary bg-white shadow-sm hover:bg-indigo-800"
+                href="/register"
+                className="ml-8 inline-flex items-center justify-center rounded-md text-base px-4 py-2 font-semibold text-white bg-primary shadow-sm"
               >
-                Sign up
+                Get Started
               </a>
             </div>
           </div>
@@ -215,11 +203,12 @@ export default function Header() {
         leaveTo="opacity-0 scale-95"
       >
         <Popover.Panel
-          focus
+
           className="absolute inset-x-0 top-0 z-30 origin-top-right transform p-2 transition md:hidden"
         >
-          <div className="divide-y-2 divide-gray-50 rounded-lg  shadow-lg ring-1 ring-black ring-opacity-5">
-            <div className="px-5 pt-5 pb-6 sm:pb-8">
+          <div className="divide-y-2 divide-gray-50 rounded-lg shadow-lg ">
+
+            <div className="">
               <div className="flex items-center justify-between">
                 <div>
                   <img
@@ -231,65 +220,35 @@ export default function Header() {
                 <div className="-mr-2">
                   <Popover.Button className="inline-flex items-center justify-center rounded-md  p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                     <span className="sr-only">Close menu</span>
-                    <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                    <Squares2X2Icon className="h-6 w-6" aria-hidden="true" />
                   </Popover.Button>
                 </div>
               </div>
-              <div className="mt-6 sm:mt-8">
-                <nav>
-                  <div className="grid gap-7 sm:grid-cols-2 sm:gap-y-8 sm:gap-x-4">
-                    {solutions.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50"
-                      >
-                        <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-primary text-white sm:h-12 sm:w-12">
-                          <item.icon className="h-6 w-6" aria-hidden="true" />
-                        </div>
-                        <div className="ml-4 text-base font-medium text-white">{item.name}</div>
-                      </a>
-                    ))}
-                  </div>
-                  <div className="mt-8 text-base">
-                    <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                      View all products
-                      <span aria-hidden="true"> &rarr;</span>
-                    </a>
-                  </div>
-                </nav>
-              </div>
+
             </div>
-            <div className="py-6 px-5">
+            <div className="py-6 px-5 bg-white">
               <div className="grid grid-cols-2 gap-4">
-                <a href="#" className="rounded-md text-base font-medium text-white hover:text-gray-700">
-                  Pricing
-                </a>
-                <a href="#" className="rounded-md text-base font-medium text-white hover:text-gray-700">
-                  About
-                </a>
-                <a href="#" className="rounded-md text-base font-medium text-white hover:text-gray-700">
-                  Company
-                </a>
-                <a href="#" className="rounded-md text-base font-medium text-white hover:text-gray-700">
-                  Resources
-                </a>
-                <a href="#" className="rounded-md text-base font-medium text-white hover:text-gray-700">
-                  Blog
-                </a>
-                <a href="#" className="rounded-md text-base font-medium text-white hover:text-gray-700">
-                  Contact Sales
-                </a>
+              {links.map(link => {
+                return (
+                  <Link
+                    href={link.href}
+                    className="rounded-md text-base font-medium text-primary hover:text-gray-700"
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
+                
               </div>
               <div className="mt-6">
                 <a
                   href="#"
-                  className="flex w-full items-center justify-center rounded-md border border-transparent bg-primary px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                  className="flex w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                 >
                   Sign up
                 </a>
                 <p className="mt-6 text-center text-base font-medium text-gray-500">
-                  Existing customer?{' '}
+                  Existing customer?{" "}
                   <a href="#" className="text-indigo-600 hover:text-indigo-500">
                     Sign in
                   </a>
@@ -300,5 +259,5 @@ export default function Header() {
         </Popover.Panel>
       </Transition>
     </Popover>
-  )
+  );
 }

@@ -1,8 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+input {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  background: none;
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  outline: none;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: #cbd5e0;
+}
+
+input:focus {
+  border-color: #6100ff;
+}
+
+h1{
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
