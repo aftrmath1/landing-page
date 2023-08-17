@@ -63,6 +63,7 @@ export default function BasicInfoForm({ onReady, loading }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        <span className="text-xs text-gray-600">You can change your basic information after completing registration.</span>
       </div>
       <div className="w-full max-w-lg p-2 space-y-4 mt-5">
         <p>Company Info</p>
