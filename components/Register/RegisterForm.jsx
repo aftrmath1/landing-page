@@ -109,7 +109,11 @@ export default function RegisterForm() {
       }
     );
     if (!firebaseUser.user) {
-      messages.push("Error creating user");
+      if (firebaseUser.error.code === "auth/email-already-in-use") {
+        messages.push("Email already in use");
+      } else {
+        messages.push("Error creating user: " + firebaseUser.error.code);
+      }
       setBasicInfoFormLoading(false);
       setTimeout(() => setMessages([]), 5000);
       return;
