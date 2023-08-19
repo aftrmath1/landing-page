@@ -14,14 +14,14 @@ const getStripe = () => {
 const pricing = {
   frequencies: [
     { value: "monthly", label: "Monthly", priceSuffix: "/month" },
-    { value: "annually", label: "Annually", priceSuffix: "/year" },
+    { value: "annually", label: "Annually", priceSuffix: "/month" },
   ],
   tiers: [
     {
       name: "Starter",
       productId: "prod_ODjk3tWXhIuy5r",
       href: "#",
-      price: { monthly: "$15", annually: "$144" },
+      price: { monthly: "$60", annually: "$48" },
       description: "The essentials to provide your best work for clients.",
       features: [
         "5 products",
@@ -36,7 +36,7 @@ const pricing = {
       name: "Growth",
       productId: "prod_ODjmMknxjs2UeX",
       href: "#",
-      price: { monthly: "$30", annually: "$288" },
+      price: { monthly: "$110", annually: "$88" },
       description: "A plan that scales with your rapidly growing business.",
       features: [
         "25 products",
@@ -52,7 +52,7 @@ const pricing = {
       name: "Hypergrowth",
       productId: "prod_ODjmmKs88eIRk4",
       href: "#",
-      price: { monthly: "$48", annually: "$576" },
+      price: { monthly: "$299", annually: "$239" },
       description: "Dedicated support and infrastructure for your company.",
       features: [
         "Unlimited products",
