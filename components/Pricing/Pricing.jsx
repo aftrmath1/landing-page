@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Dialog, RadioGroup } from "@headlessui/react";
 import { CheckIcon } from "@heroicons/react/20/solid";
 import { loadStripe } from "@stripe/stripe-js";
+import Link from "next/link";
 
 let stripePromise;
 const getStripe = () => {
@@ -20,7 +21,7 @@ const pricing = {
     {
       name: "Starter",
       productId: "prod_ODjk3tWXhIuy5r",
-      href: "#",
+      href: "/register",
       price: { monthly: "$60", annually: "$48" },
       description: "The essentials to provide your best work for clients.",
       features: [
@@ -35,7 +36,7 @@ const pricing = {
     {
       name: "Growth",
       productId: "prod_ODjmMknxjs2UeX",
-      href: "#",
+      href: "/register",
       price: { monthly: "$110", annually: "$88" },
       description: "A plan that scales with your rapidly growing business.",
       features: [
@@ -51,7 +52,7 @@ const pricing = {
     {
       name: "Hypergrowth",
       productId: "prod_ODjmmKs88eIRk4",
-      href: "#",
+      href: "/register",
       price: { monthly: "$299", annually: "$239" },
       description: "Dedicated support and infrastructure for your company.",
       features: [
@@ -186,7 +187,7 @@ export default function PricingBody() {
                     {frequency.priceSuffix}
                   </span>
                 </p>
-                <a
+                <Link
                   href={tier.href}
                   aria-describedby={tier.id}
                   className={classNames(
@@ -200,7 +201,7 @@ export default function PricingBody() {
                   }
                 >
                   Buy plan
-                </a>
+                </Link>
                 <ul
                   role="list"
                   className="mt-8 space-y-3 text-sm leading-6 text-gray-300 xl:mt-10"
