@@ -171,7 +171,7 @@ export default function RegisterForm() {
             Tell us about yourself.
           </h1>
         </div>
-        <div className="my-20">
+        <div className="my-20 bg-background">
           <div className="flex flex-col justify-center items-center h-full w-full">
             <div className="border rounded-xl w-full h-full flex flex-col justify-center items-center text-gray-900">
               <ul class="steps w-full mb-8 transition-all mt-10">

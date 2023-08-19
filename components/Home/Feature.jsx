@@ -1,8 +1,9 @@
 export default function Feature({ step, title, description, image, alternate }) {
     const isAlternate = alternate && step % 2 !== 0;
-  
+    
+
     return (
-      <div className="overflow-hidden py-12 max-w-7xl m-auto">
+      <div id="features" className="overflow-hidden py-12 max-w-7xl m-auto">
         <div className="">
           <div className="invisible hidden md:visible md:grid grid-cols-1 gap-y-16 gap-x-8 sm:gap-y-20 lg:grid-cols-2 lg:items-center">
             {isAlternate ? (

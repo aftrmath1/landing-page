@@ -34,7 +34,7 @@ export default function BasicInfoForm({ onReady, loading }) {
   };
   return (
     <form
-      className="flex flex-col justify-center items-center px-16 pb-10"
+      className="flex flex-col justify-center items-center px-16 pb-10 "
       onSubmit={handleSubmit}
     >
       <div className="w-full max-w-lg p-2 space-y-4">

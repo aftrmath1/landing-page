@@ -179,7 +179,7 @@ export default function Header() {
               })}
             </Popover.Group>
             <div className="flex items-center md:ml-12">
-              <a href="/login" className="text-base font-semibold text-primary">
+              <a href="https://app.buildpipeline.ai/" className="text-base font-semibold text-primary">
                 Sign in
               </a>
               <a
@@ -249,7 +249,7 @@ export default function Header() {
                 </a>
                 <p className="mt-6 text-center text-base font-medium text-gray-500">
                   Existing customer?{" "}
-                  <a href="#" className="text-indigo-600 hover:text-indigo-500">
+                  <a href="https://app.buildpipeline.ai/" className="text-indigo-600 hover:text-indigo-500">
                     Sign in
                   </a>
                 </p>

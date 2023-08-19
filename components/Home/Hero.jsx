@@ -1,3 +1,5 @@
+import { Link, animateScroll as scroll } from "react-scroll";
+
 export default function Hero() {
   return (
     <div className="relative isolate overflow-hidden">
@@ -59,7 +61,7 @@ export default function Hero() {
 
       <div className="mx-auto max-w-7xl pb-20 sm:pb-8 lg:flex lg:pb-32 px-6 lg:px-8 md:h-screen md:flex md:items-center">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0  lg:pt-8">
-          <div className="mt-24 sm:mt-32 lg:mt-16">
+          {/* <div className="mt-24 sm:mt-32 lg:mt-16">
             <a
               href="#"
               className="space-x-6 flex justify-center md:justify-normal"
@@ -71,7 +73,7 @@ export default function Hero() {
                 Free warmup included
               </span>
             </a>
-          </div>
+          </div> */}
 
           <div className="">
             <h1 className="mt-10 text-4xl font-bold tracking-tight text-black sm:text-6xl text-center md:text-left">
@@ -84,18 +86,21 @@ export default function Hero() {
           </div>
 
           <div className="mt-10 flex justify-center md:justify-normal items-center gap-x-6">
-            <a
-              href="#"
-              className="rounded-md bg-primary px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm duration-200 hover:bg-gray-100 hover:text-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+            <Link
+              href="/register"
+              className="rounded-md bg-primary hover:opacity-80 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
             >
               Get started
-            </a>
-            <a
-              href="#"
-              className="text-base font-semibold leading-7 text-primary hover:translate-x-2 duration-200 ease-in-out"
+            </Link>
+
+            <Link
+              to="features"
+              smooth={true}
+              duration={600}
+              className="hover:cursor-pointer text-base font-semibold leading-7 text-primary hover:translate-x-2 duration-200 ease-in-out"
             >
               Learn more <span aria-hidden="true">→</span>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="hidden sm:block mx-auto pt-12 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mt-0 lg:mr-0 lg:max-w-none lg:flex-none xl:ml-32">
