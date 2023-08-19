@@ -34,8 +34,8 @@ const navigation = {
     ],
     legal: [
       { name: 'Claim', href: '#' },
-      { name: 'Privacy', href: '#' },
-      { name: 'Terms', href: '#' },
+      { name: 'Privacy', href: '/privacy-policy' },
+      { name: 'Terms', href: '/terms-and-conditions' },
     ],
     social: [
       {
