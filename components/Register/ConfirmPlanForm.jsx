@@ -1,5 +1,6 @@
 import ContinueButton from "./ContinueButton";
 import PreviousButton from "./PreviousButton";
+import { FiArrowLeft, FiArrowRight, FiRotateCw } from "react-icons/fi";
 
 export default function ConfirmPlanForm({
   plan,
@@ -17,7 +18,7 @@ export default function ConfirmPlanForm({
   };
   return (
     <form
-      className="flex flex-col justify-center items-center px-16 w-full"
+      className="flex flex-col justify-center items-center px-16 w-full pb-10"
       onSubmit={handleSubmit}
     >
       <div className="w-full max-w-lg p-2 space-y-4">
@@ -29,9 +30,11 @@ export default function ConfirmPlanForm({
           plan.
         </p>
       </div>
-      <div className="inline-flex w-full space-x-4">
-        <PreviousButton onClick={goBack} />
-        <ContinueButton onClick={handleSubmit} loading={loading} />
+      <div className="flex w-full justify-between space-x-4 mt-12">
+      <FiArrowLeft className="text-primary w-7 h-7 hover:cursor-pointer hover:opacity-80 duration-300" onClick={goBack}/>
+      <FiArrowRight className="text-primary w-7 h-7 hover:cursor-pointer hover:opacity-80 duration-300" onClick={handleSubmit}/>
+        {/* <PreviousButton onClick={goBack} />
+        <ContinueButton onClick={handleSubmit} loading={loading} /> */}
       </div>
     </form>
   );

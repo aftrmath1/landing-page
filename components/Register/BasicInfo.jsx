@@ -20,9 +20,9 @@ export default function BasicInfoForm({ onReady, loading }) {
     }
   }, [name, email, companyName, phone, jobPosition]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
-    alert(name, email, companyName, phone, jobPosition);
+    // alert(name, email, companyName, phone, jobPosition);
     onReady({
       name,
       email,
@@ -43,27 +43,29 @@ export default function BasicInfoForm({ onReady, loading }) {
           type="text"
           placeholder="Full Name"
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={e => setName(e.target.value)}
         />
         <TextInput
           type="text"
           placeholder="Email Address"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={e => setEmail(e.target.value)}
         />
         <TextInput
           type="text"
           placeholder="Phone Number"
           value={phone}
-          onChange={(e) => setPhone(e.target.value)}
+          onChange={e => setPhone(e.target.value)}
         />
         <TextInput
           type="password"
           placeholder="Password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={e => setPassword(e.target.value)}
         />
-        <span className="text-xs text-gray-600">You can change your basic information after completing registration.</span>
+        <span className="text-xs text-gray-600">
+          You can change your basic information after completing registration.
+        </span>
       </div>
       <div className="w-full max-w-lg p-2 space-y-4 mt-5">
         <p>Company Info</p>
@@ -72,16 +74,22 @@ export default function BasicInfoForm({ onReady, loading }) {
           type="text"
           placeholder="Company Name"
           value={companyName}
-          onChange={(e) => setCompanyName(e.target.value)}
+          onChange={e => setCompanyName(e.target.value)}
         />
         <TextInput
           type="text"
           placeholder="Your Job Position"
           value={jobPosition}
-          onChange={(e) => setJobPosition(e.target.value)}
+          onChange={e => setJobPosition(e.target.value)}
         />
       </div>
-      <ContinueButton disabled={disabled} loading={loading} />
+      {/* <ContinueButton disabled={disabled} loading={loading} /> */}
+      <div className="flex w-full justify-end space-x-4 mt-12">
+        <FiArrowRight
+          className="text-primary w-7 h-7 hover:cursor-pointer hover:opacity-80 duration-300"
+          onClick={handleSubmit}
+        />
+      </div>
     </form>
   );
 }

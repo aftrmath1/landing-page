@@ -31,7 +31,7 @@ export default function RegisterForm() {
   const [createdFirebaseUser, setCreatedFirebaseUser] = useState(null);
   const [clientSecret, setClientSecret] = useState("");
   const [steps, setSteps] = useState([
-    { name: "Basic Info", active: true, completed: false },
+    { name: "Basic Info", active: false, completed: false },
     {
       name: "Choose Plan",
       active: false,
@@ -39,7 +39,7 @@ export default function RegisterForm() {
     },
     {
       name: "Confirm",
-      active: false,
+      active: true,
       completed: false,
     },
     {
@@ -163,12 +163,19 @@ export default function RegisterForm() {
     nextStep();
   };
 
+  const statements = {
+    1: "Tell us about yourself.",
+    2: "Choose a payment plan.",
+    3: "Confirm your order.",
+    4: "Almost there! Purchase your order now.",
+  };
+
   return (
     <>
       <div className="grid lg:grid-cols-2 justify-center items-center max-w-7xl mx-auto">
         <div className="h-full rounded-xl flex flex-col justify-center w-full grow">
           <h1 className="text-7xl text-primary text-center font-medium max-w-lg mx-auto">
-            Tell us about yourself.
+            {statements[steps.findIndex(step => step.active) + 1]}
           </h1>
         </div>
         <div className="my-20 bg-background">
@@ -193,6 +200,7 @@ export default function RegisterForm() {
                     loading={basicInfoFormLoading}
                   />,
                   <ChoosePlanForm
+                    onPreviousStep={_ => previousStep()}
                     onReady={e => handleChoosePlanFormReady(e)}
                   />,
                   <ConfirmPlanForm

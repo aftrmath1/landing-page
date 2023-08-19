@@ -3,6 +3,7 @@ import PreviousButton from "./PreviousButton";
 import Link from "next/link";
 import { useState } from "react";
 import { payments } from "./data";
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
 function PlanOption({ children, onClick }) {
   return (
@@ -11,14 +12,19 @@ function PlanOption({ children, onClick }) {
         type="radio"
         name="plan"
         className="radio radio-xs radio-primary mr-3 mb-1"
-        onClick={onClick}
+        onChange={onClick}
       />
       <p className="text-sm xl:text-md">{children}</p>
     </div>
   );
 }
 
-export default function ChoosePlan({ onReady }) {
+export default function ChoosePlan({ onReady,onPreviousStep }) {
+  const goBack = (e) => {
+    e.preventDefault();
+    onPreviousStep();
+  };
+
   const handleSubmit = e => {
     e.preventDefault();
     onReady({ name: selectedPlanName, id: selectedPlanId, monthly });
@@ -59,7 +65,7 @@ export default function ChoosePlan({ onReady }) {
         {payments.map(payment => (
           <PlanOption
             key={payment.name}
-            onClick={() => {
+            onChange={() => {
               setSelectedPlanName(payment.name);
               setSelectedPlanId(payment.monthly);
             }}
@@ -71,8 +77,12 @@ export default function ChoosePlan({ onReady }) {
           Learn more about our plans
         </Link>
       </ul>
-      <div className="inline-flex w-full space-x-4">
+      {/* <div className="inline-flex w-full space-x-4">
         <ContinueButton onClick={handleSubmit} />
+      </div> */}
+      <div className="flex w-full justify-between space-x-4 mt-12">
+      <FiArrowLeft className="text-primary w-7 h-7 hover:cursor-pointer hover:opacity-80 duration-300" onClick={goBack}/>
+      <FiArrowRight className="text-primary w-7 h-7 hover:cursor-pointer hover:opacity-80 duration-300" onClick={handleSubmit}/>
       </div>
     </form>
   );
