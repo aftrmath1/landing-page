@@ -174,14 +174,14 @@ export default function RegisterForm() {
     <>
       <div className="grid lg:grid-cols-2 justify-center items-center max-w-7xl mx-auto">
         <div className="h-full rounded-xl flex flex-col justify-center w-full grow">
-          <h1 className="text-7xl text-primary text-center font-medium max-w-lg mx-auto">
+          <h1 className="text-5xl md:text-7xl text-primary text-center font-medium max-w-lg mx-auto">
             {statements[steps.findIndex(step => step.active) + 1]}
           </h1>
         </div>
-        <div className="my-20 bg-background">
+        <div className="bg-background rounded-xl shadow-xl m-6 md:m-0 md:my-20">
           <div className="flex flex-col justify-center items-center h-full w-full">
             <div className="border rounded-xl w-full h-full flex flex-col justify-center items-center text-gray-900">
-              <ul class="steps w-full mb-8 transition-all mt-10">
+              <ul class="steps w-full mb-8 transition-all mt-10 text-sm md:text-md">
                 {steps.map(step => (
                   <li
                     key={step.name}
@@ -189,7 +189,7 @@ export default function RegisterForm() {
                       step.active || step.completed ? "step-primary" : ""
                     }`}
                   >
-                    {step.name}
+                    <p className="mt-2">{step.name}</p>
                   </li>
                 ))}
               </ul>

@@ -36,7 +36,7 @@ export default function ChoosePlan({ onReady,onPreviousStep }) {
   const [selectedPlanId, setSelectedPlanId] = useState("");
 
   return (
-    <form className="px-16 w-full pb-10" onSubmit={handleSubmit}>
+    <form className="px-6 md:px-10 w-full pb-10" onSubmit={handleSubmit}>
       <div className="">
         <label class="font-semibold mb-2">Payment</label>
         {/* <input

@@ -1,6 +1,6 @@
 export default function AboutCard() {
   return (
-    <div className="relative isolate -translate-y-8 md:-translate-y-10 lg:-translate-y-12 bg-white z-10 mx-6 sm:mx-10 md:mx-20 lg:mx-32 rounded-xl shadow-xl">
+    <div className="md:rounded-xl rounded-none relative isolate md:-translate-y-10 lg:-translate-y-12 bg-white z-10 sm:mx-10 md:mx-20 lg:mx-32 rounded-xl shadow-xl">
       <div className="px-6 py-3 sm:py-6 md:py-8 lg:py-12 lg:gap-x-10 lg:px-12 text-black">
         <div className="mb-4 md:mb-8 lg:mb-12">
           <h1 className="text-xl">

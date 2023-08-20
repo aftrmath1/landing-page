@@ -151,7 +151,7 @@ export default function BasicInfoForm({ onReady, loading }) {
 
   return (
     <form
-      className="flex flex-col justify-center items-center px-16 pb-10 "
+      className="flex flex-col justify-center items-center px-6 md:px-10 pb-10 "
       onSubmit={handleSubmit}
     >
       <ToastContainer

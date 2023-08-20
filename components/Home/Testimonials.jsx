@@ -1,6 +1,6 @@
 export default function Testimonials() {
   return (
-    <section className="mx-auto max-w-7xl">
+    <section className="mx-auto max-w-7xl px-5 md:px-0">
       <div className="">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-10">
           Hear from our customers.

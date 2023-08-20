@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function TermsAndConditions() {
   return (
-    <div className="relative isolate -translate-y-8 md:-translate-y-10 lg:-translate-y-12 bg-white z-10 mx-6 sm:mx-10 md:mx-20 lg:mx-32 rounded-xl shadow-xl">
+    <div className="relative isolate md:-translate-y-10 lg:-translate-y-12 bg-white z-10 sm:mx-10 md:mx-20 lg:mx-32 md:rounded-xl rounded-none shadow-xl">
       <div className="px-6 py-8 text-black">
         <p>
           These terms and conditions (the "Terms and Conditions") govern the use of buildpipeline.ai (the "Site"). This Site is owned and operated by Aftermath Labs Limited. This Site is an ecommerce website.

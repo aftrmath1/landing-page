@@ -33,7 +33,7 @@ export default function PurchasePlanForm({ onReady, onPreviousStep }) {
   };
   return (
     <form
-      className="flex flex-col justify-center items-center px-16 w-full"
+      className="flex flex-col justify-center items-center px-6 md:px-10 w-full"
       onSubmit={handleSubmit}
     >
       <PaymentElement />
