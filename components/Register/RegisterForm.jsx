@@ -31,7 +31,7 @@ export default function RegisterForm() {
   const [createdFirebaseUser, setCreatedFirebaseUser] = useState(null);
   const [clientSecret, setClientSecret] = useState("");
   const [steps, setSteps] = useState([
-    { name: "Basic Info", active: false, completed: false },
+    { name: "Basic Info", active: true, completed: false },
     {
       name: "Choose Plan",
       active: false,
@@ -39,7 +39,7 @@ export default function RegisterForm() {
     },
     {
       name: "Confirm",
-      active: true,
+      active: false,
       completed: false,
     },
     {
