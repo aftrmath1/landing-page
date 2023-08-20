@@ -20,12 +20,6 @@ export default function Hero() {
               <path d="M.5 200V.5H200" fill="none" />
             </pattern>
           </defs>
-          <svg x="50%" y={-1} className="overflow-visible fill-gray-900">
-            <path
-              d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-              strokeWidth={0}
-            />
-          </svg>
           <rect
             width="100%"
             height="100%"
@@ -106,11 +100,11 @@ export default function Hero() {
         <div className="hidden sm:block mx-auto pt-12 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mt-0 lg:mr-0 lg:max-w-none lg:flex-none xl:ml-32">
           <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
             <img
-              src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
+              src="/insights.png"
               alt="App screenshot"
-              width={2432}
-              height={1442}
-              className="w-[76rem] rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10"
+              width={2032}
+              height={1042}
+              className="w-[55rem] rounded-md bg-white/5"
             />
           </div>
         </div>
