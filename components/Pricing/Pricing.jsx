@@ -27,6 +27,7 @@ const pricing = {
       features: [
         "5 products",
         "Up to 1,000 subscribers",
+        "Send up to 100 daily emails",
         "Basic analytics",
         "48-hour support response time",
       ],
@@ -42,6 +43,7 @@ const pricing = {
       features: [
         "25 products",
         "Up to 10,000 subscribers",
+        "Send up to 500 daily emails",
         "Advanced analytics",
         "24-hour support response time",
         "Marketing automations",
@@ -58,6 +60,7 @@ const pricing = {
       features: [
         "Unlimited products",
         "Unlimited subscribers",
+        "Send unlimited daily emails",
         "Advanced analytics",
         "1-hour, dedicated support response time",
         "Marketing automations",

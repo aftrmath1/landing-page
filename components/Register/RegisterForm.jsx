@@ -196,20 +196,27 @@ export default function RegisterForm() {
               {
                 [
                   <BasicInfoForm
+                    key={0}
                     onReady={e => handleBasicInfoFormReady(e)}
                     loading={basicInfoFormLoading}
                   />,
                   <ChoosePlanForm
+                    key={1}
                     onPreviousStep={_ => previousStep()}
                     onReady={e => handleChoosePlanFormReady(e)}
                   />,
                   <ConfirmPlanForm
+                    key={2}
                     plan={chosenPlan}
                     onReady={handleConfirmPlanFormReady}
                     onPreviousStep={_ => previousStep()}
                     loading={confirmPlanFormLoading}
                   />,
-                  <Elements stripe={stripePromise} options={{ clientSecret }}>
+                  <Elements
+                    stripe={stripePromise}
+                    options={{ clientSecret }}
+                    key={3}
+                  >
                     <PurchasePlanForm
                       onReady={e => handlePurchasePlanFormReady(e)}
                       onPreviousStep={_ => previousStep()}
@@ -221,7 +228,7 @@ export default function RegisterForm() {
           </div>
         </div>
       </div>
-      <ToastProvider toasts={messages} />
+      <ToastProvider toasts={messages} key={"toast-provider"}/>
     </>
   );
 }

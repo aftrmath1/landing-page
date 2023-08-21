@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export default function CTA() {
    return (
      <div className="max-w-7xl mx-auto py-24 px-5 md:px-0">
@@ -9,12 +11,12 @@ export default function CTA() {
          <p className="my-5 text-lg leading-6 text-indigo-200">
            Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec.
          </p>
-         <a
+         <Link
            href="/register"
            className="my-5 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50 sm:w-auto"
          >
            Sign up for free
-         </a>
+         </Link>
        </div>
      </div>
    )

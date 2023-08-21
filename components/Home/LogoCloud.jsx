@@ -8,7 +8,7 @@ export default function LogoCloud() {
         <div className="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-8">
           {logos.map(logo => {
             return (
-              <div className="col-span-1 flex justify-center py-8 px-8">
+              <div key={logo.name} className="col-span-1 flex justify-center py-8 px-8">
                 <img className={`${logo.size} hover:brightness-[1.2] duration-500`} src={logo.src} alt={logo.name} />
               </div>
             );

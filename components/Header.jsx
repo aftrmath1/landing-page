@@ -68,10 +68,10 @@ export default function Header() {
       <div className="relative z-20">
         <div className="mx-auto flex max-w-7xl items-center justify-between py-5 px-6 sm:py-4 md:justify-start md:space-x-10 lg:px-8">
           <div>
-            <a href="/" className="flex">
+            <Link href="/" className="flex">
               <span className="sr-only">Your Company</span>
               <img className="h-8 w-auto sm:h-10" src="/logo.png" alt="" />
-            </a>
+            </Link>
           </div>
           <div className="-my-2 -mr-2 md:hidden">
             <Popover.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none">
@@ -170,6 +170,7 @@ export default function Header() {
               {links.map(link => {
                 return (
                   <Link
+                  key={link.href}
                     href={link.href}
                     className="text-base font-semibold text-primary"
                   >
@@ -179,15 +180,15 @@ export default function Header() {
               })}
             </Popover.Group>
             <div className="flex items-center md:ml-12">
-              <a href="https://app.buildpipeline.ai/" className="text-base font-semibold text-primary">
+              <Link href="https://app.buildpipeline.ai/" className="text-base font-semibold text-primary">
                 Sign in
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/register"
                 className="ml-8 inline-flex items-center justify-center rounded-md text-base px-4 py-2 font-semibold text-white bg-primary shadow-sm"
               >
                 Get Started
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -231,6 +232,7 @@ export default function Header() {
               {links.map(link => {
                 return (
                   <Link
+                  key={link.href}
                     href={link.href}
                     className="rounded-md text-base font-medium text-primary hover:text-gray-700"
                   >
@@ -249,9 +251,9 @@ export default function Header() {
                 </Link>
                 <p className="mt-6 text-center text-base font-medium text-gray-500">
                   Existing customer?{" "}
-                  <a href="https://app.buildpipeline.ai/" className="text-indigo-600 hover:text-indigo-500">
+                  <Link href="https://app.buildpipeline.ai/" className="text-indigo-600 hover:text-indigo-500">
                     Sign in
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>
