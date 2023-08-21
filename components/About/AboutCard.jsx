@@ -39,9 +39,7 @@ export default function AboutCard() {
           </p>
 
           <p className="mb-2 md:mb-3">
-            We're reshaping the future of sales, one small business at a time.
-            That's our promise. That's our mission. Join us in rewriting the
-            rules of the game.
+          Join us in turning the sales industry on its head. Because with Pipeline, every touchpoint matters, every customer feels seen, and every business, no matter how small, has the power to make a big impact.
           </p>
         </div>
 
