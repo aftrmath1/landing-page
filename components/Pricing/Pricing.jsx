@@ -112,7 +112,6 @@ export default function PricingBody() {
       <main>
         {/* Pricing section */}
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-
           {/* <div className="mx-auto max-w-4xl text-center">
             <p className="mt-2 text-4xl font-bold tracking-tight text-black sm:text-5xl">
               Pricing plans for teams of&nbsp;all&nbsp;sizes
@@ -128,7 +127,7 @@ export default function PricingBody() {
             <RadioGroup
               value={frequency}
               onChange={setFrequency}
-              className="grid grid-cols-2 gap-x-1 rounded-full bg-black p-1 text-center text-xs font-semibold leading-5 text-white"
+              className="grid grid-cols-2 gap-x-1 rounded-xl bg-black p-1 text-center text-xs font-semibold leading-5 text-white"
             >
               <RadioGroup.Label className="sr-only">
                 Payment frequency
@@ -140,11 +139,20 @@ export default function PricingBody() {
                   className={({ checked }) =>
                     classNames(
                       checked ? "bg-gray-600" : "",
-                      "cursor-pointer rounded-full px-2.5 py-1"
+                      "cursor-pointer rounded-xl px-2.5 py-1"
                     )
                   }
                 >
-                  <span>{option.label}</span>
+                  {option.label == "Annually" ? (
+                    <div className="flex justify-center items-center gap-x-5">
+                      <p>Annually</p>
+                      <p className="bg-yellow-200 text-yellow-800 rounded-3xl px-2 py-1 text-xs 2xl:text-sm">
+                        Save 20%
+                      </p>
+                    </div>
+                  ) : (
+                    <span>{option.label}</span>
+                  )}
                 </RadioGroup.Option>
               ))}
             </RadioGroup>
