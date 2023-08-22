@@ -20,7 +20,7 @@ export default function Feature({ step, title, description, image, alternate }) 
                       <img
                         src={image}
                         alt="Product screenshot"
-                        className="-mb-12 w-[57rem] max-w-none rounded-tl-xl bg-gray-800 ring-1 ring-white/10"
+                        className="w-[40rem] mb-10 max-w-none rounded-tl-xl"
                       />
                     </div>
                     <div
@@ -58,7 +58,7 @@ export default function Feature({ step, title, description, image, alternate }) 
                       <img
                         src={image}
                         alt="Product screenshot"
-                        className="-mb-12 w-[57rem] max-w-none rounded-tl-xl bg-gray-800 ring-1 ring-white/10"
+                          className="w-[40rem] mb-10 max-w-none rounded-tl-xl bg-gray-800 "
                       />
                     </div>
                     <div
@@ -98,7 +98,7 @@ export default function Feature({ step, title, description, image, alternate }) 
                       <img
                         src={image}
                         alt="Product screenshot"
-                        className="-mb-12 w-[57rem] max-w-none rounded-tl-xl bg-gray-800 ring-1 ring-white/10"
+                      className="w-[40rem] mb-10 max-w-none rounded-tl-xl bg-gray-800 "
                       />
                     </div>
                     <div
