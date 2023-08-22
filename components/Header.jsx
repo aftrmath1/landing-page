@@ -41,16 +41,12 @@ const solutions = [
 
 const links = [
   {
-    name: "About",
-    href: "/about",
-  },
-  {
     name: "Pricing",
     href: "/pricing",
   },
   {
     name: "Contact",
-    href: "mailto:support@buildpipeline.ai",
+    href: "/contact-us",
   },
 ];
 
@@ -184,7 +180,7 @@ export default function Header() {
                 Sign in
               </Link>
               <Link
-                href="/register"
+                href="/pricing"
                 className="ml-8 inline-flex items-center justify-center rounded-md text-base px-4 py-2 font-semibold text-white bg-primary shadow-sm"
               >
                 Get Started

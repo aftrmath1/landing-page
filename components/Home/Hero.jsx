@@ -81,7 +81,7 @@ export default function Hero() {
 
           <div className="mt-10 flex justify-center md:justify-normal items-center gap-x-6">
             <Link
-              href="/register"
+              href="/pricing"
               className="rounded-md bg-primary hover:opacity-80 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
             >
               Get started
