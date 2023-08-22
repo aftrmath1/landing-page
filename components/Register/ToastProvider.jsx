@@ -2,7 +2,7 @@ export default function ToastProvider({ toasts }) {
   return (
     <div className="toast toast-end">
       {toasts.map((toast) => (
-        <div className="alert alert-warning">
+        <div className="alert alert-warning" key={toast}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="stroke-current shrink-0 h-6 w-6"
