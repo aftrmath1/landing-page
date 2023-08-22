@@ -1,5 +1,5 @@
-export default function Feature({ step, title, description, image, alternate }) {
-    const isAlternate = alternate && step % 2 !== 0;
+export default function Feature({ title, description, image, alternate }) {
+    const isAlternate = alternate % 2 !== 0;
     
 
     return (
@@ -31,7 +31,6 @@ export default function Feature({ step, title, description, image, alternate }) 
                 </div>
                 <div className={`px-6 lg:px-0 ${isAlternate ? 'lg:pr-4' : 'lg:pl-4'}`}>
                   <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
-                    <h2 className="text-lg font-semibold leading-8 tracking-tight text-primary">{step}</h2>
                     <p className="mt-2 text-3xl font-bold tracking-tight text-black sm:text-4xl">{title}</p>
                     <p className="mt-6 text-lg leading-8 text-accent">{description}</p>
                   </div>
@@ -41,7 +40,6 @@ export default function Feature({ step, title, description, image, alternate }) 
               <>
                 <div className={`px-6 lg:px-0 ${isAlternate ? 'lg:pl-4' : 'lg:pr-4'}`}>
                   <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
-                    <h2 className="text-lg font-semibold leading-8 tracking-tight text-primary">{step}</h2>
                     <p className="mt-2 text-3xl font-bold tracking-tight text-black sm:text-4xl">{title}</p>
                     <p className="mt-6 text-lg leading-8 text-accent">{description}</p>
                   </div>
@@ -80,7 +78,6 @@ export default function Feature({ step, title, description, image, alternate }) 
                 
                 <div className={`px-2 lg:px-0 ${isAlternate ? 'lg:pr-4' : 'lg:pl-4'}`}>
                   <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
-                    <h2 className="text-lg font-semibold leading-8 tracking-tight text-primary">{step}</h2>
                     <p className="mt-2 text-3xl font-bold tracking-tight text-black sm:text-4xl">{title}</p>
                     <p className="mt-6 text-lg leading-8 text-accent">{description}</p>
                   </div>

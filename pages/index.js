@@ -9,21 +9,21 @@ import CTA from '../components/Home/CTA'
 
 const features = [
   {
-    name: 'Eliminate writer\'s block with AI generated personalized messages',
-    description: 'Sales reps can create more personalized and relevant messages that are tailored to the specific needs and interests of your prospects.  It can generate these messages for 1000’s of prospects, at once. ',
+    name: 'Bringing insights about your prospects to the forefront when you\’re reviewing emails',
+    description: 'Pipeline learns about your prospects & their buying habits from your CRM data & publicly available information. We then bring it to your attention and you can decide whether or not to include the insights into your messages.  Using their social media profile, linkedin engagement, press releases & other news to create attention grabbing & personal emails. ',
     icon: LockClosedIcon,
     image: "/featureprimary.png",
   },
   {
-    name: 'Access 10,000+ leads within your target market',
+    name: 'Eliminate writer\'s block with AI generated personalised messages',
     description:
-      'Not only do we have thousands of verified leads, we have the intelligence on whom you should reach out to. Filter down by industry, job title, company size, and more.',
+      'Pipeline will create more personalised and relevant messages that are tailored to the specific needs and interests of your prospects.   Pipeline understands your prospects and can translate your unique value proposition into messaging that resonates with each individual buyer.   It can generate these messages for 1000\’s of prospects, at once.',
     icon: CloudArrowUpIcon,
     image: "/featuresecondary.svg",
   },
   {
-    name: 'Infinitely scale your outreach with email warmups & unlimited sending',
-    description: 'Reach your prospects\' inboxes with unlimited warmup and email sending from within the Pipeline platform.',
+    name: 'Infinitely scale your outreach with unlimited sending via Linkedin & Email. ',
+    description: 'No need to get lost in the web browser tabs anymore.  You can send LinkedIn InMail messages or emails to distribute your personalised messages from within the pipeline platform.',
     icon: ServerIcon,
     image: "/featuretertiary.svg"
   },
@@ -37,7 +37,6 @@ export default function Home() {
       {features.map((feature, index) => (
         <Feature
           key={index}
-          step={`Step ${index + 1} [Coming soon]`}
           title={feature.name}
           description={feature.description}
           image={feature.image}

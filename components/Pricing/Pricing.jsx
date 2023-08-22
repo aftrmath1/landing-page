@@ -25,14 +25,15 @@ const pricing = {
       price: { monthly: "$60", annually: "$48" },
       description: "The essentials to provide your best work for clients.",
       features: [
-        "5 products",
-        "Up to 1,000 subscribers",
-        "Send up to 100 daily emails",
-        "Basic analytics",
-        "48-hour support response time",
+        "250 Active Leads",
+        "500 Monthly Emails",
+        "Unlimited Campaigns",
+        "Send Emails via Pipeline",
+        "Email Support",
       ],
       priceId: "price_1NRIHEKQQyy4BdVzqnVYnRAq",
       mostPopular: false,
+      comingSoon: true,
     },
     {
       name: "Growth",
@@ -41,15 +42,15 @@ const pricing = {
       price: { monthly: "$110", annually: "$88" },
       description: "A plan that scales with your rapidly growing business.",
       features: [
-        "25 products",
-        "Up to 10,000 subscribers",
-        "Send up to 500 daily emails",
-        "Advanced analytics",
-        "24-hour support response time",
-        "Marketing automations",
+        "500 Active Leads",
+        "1000 Monthly Emails",
+        "Unlimited Campaigns",
+        "Send via Pipeline",
+        "Premium Support",
       ],
       priceId: "price_1NRIIVKQQyy4BdVzoWLPH3Jd",
       mostPopular: true,
+      comingSoon: false,
     },
     {
       name: "Hypergrowth",
@@ -58,16 +59,15 @@ const pricing = {
       price: { monthly: "$299", annually: "$239" },
       description: "Dedicated support and infrastructure for your company.",
       features: [
-        "Unlimited products",
-        "Unlimited subscribers",
-        "Send unlimited daily emails",
-        "Advanced analytics",
-        "1-hour, dedicated support response time",
-        "Marketing automations",
-        "Custom reporting tools",
+        "2500 Active Leads",
+        "5000 Monthly Emails",
+        "Unlimited Campaigns",
+        "Send via Pipeline",
+        "Premium Support",
       ],
       priceId: "price_1NRIIyKQQyy4BdVzEsrA92so",
       mostPopular: false,
+      comingSoon: false,
     },
   ],
 };
@@ -142,7 +142,7 @@ export default function PricingBody() {
                   className={({ checked }) =>
                     classNames(
                       checked ? "bg-gray-600" : "",
-                      "cursor-pointer rounded-xl px-2.5 py-1"
+                      "cursor-pointer rounded-xl px-2.5 py-1 flex justify-center items-center"
                     )
                   }
                 >
@@ -186,6 +186,11 @@ export default function PricingBody() {
                       Most popular
                     </p>
                   ) : null}
+                  {tier.comingSoon ? (
+                    <p className="rounded-full bg-primary px-2.5 py-1 text-xs font-semibold leading-5 text-white">
+                      Coming Soon
+                    </p>
+                  ) : null}
                 </div>
                 <p className="mt-4 text-sm leading-6 text-gray-500">
                   {tier.description}
@@ -198,6 +203,7 @@ export default function PricingBody() {
                     {frequency.priceSuffix}
                   </span>
                 </p>
+                {!tier.comingSoon ? (
                 <Link
                   href={tier.href}
                   aria-describedby={tier.id}
@@ -213,6 +219,19 @@ export default function PricingBody() {
                 >
                   Buy plan
                 </Link>
+                ) : (
+                  <div
+                  aria-describedby={tier.id}
+                  className={classNames(
+                    tier.mostPopular
+                      ? "bg-gray-700 text-white shadow-sm hover:opacity-50 focus-visible:outline-primary"
+                      : "bg-gray-700 hover:opacity-50 text-white focus-visible:outline-white",
+                    "mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 duration-300 cursor-pointer"
+                  )}
+                >
+                  Buy plan
+                </div>
+                )}
                 <ul
                   role="list"
                   className="mt-8 space-y-3 text-sm leading-6 text-gray-300 xl:mt-10"

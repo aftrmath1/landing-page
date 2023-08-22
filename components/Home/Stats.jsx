@@ -52,9 +52,6 @@ export default function Stats() {
                     <FiTrendingDown className="text-red-500 text-4xl" />
                   )}
                 </div>
-                <dd className="mt-5 text-base leading-7 text-accent">
-                  <p>{feature.description}</p>
-                </dd>
               </div>
             ))}
           </dl>
