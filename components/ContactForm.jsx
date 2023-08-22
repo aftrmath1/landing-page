@@ -7,13 +7,13 @@ export default function ContactForm() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-  emailjs.sendForm ({/*fill ids in*/})
+    emailjs.sendForm(process.env.NEXT_PUBLIC_EMAIL_SERVICE, process.env.NEXT_PUBLIC_EMAIL_TEMPLATE, form.current, process.env.NEXT_PUBLIC_EMAIL_ID)
       .then((result) => {
-          console.log(result.text);
+        console.log(result.text);
       }, (error) => {
-          console.log(error.text);
-      });
-  };
+			  console.log(error);
+    });
+  }
 
   return (
     <div className="relative isolate md:-translate-y-10 lg:-translate-y-12 bg-white z-10 sm:mx-10 md:mx-20 lg:mx-32 md:rounded-xl rounded-none shadow-xl">
