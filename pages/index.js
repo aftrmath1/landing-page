@@ -23,7 +23,7 @@ const features = [
   },
   {
     name: 'Infinitely scale your outreach across multiple channels.',
-    description: 'No need to get lost in the web browser tabs anymore.  You can send LinkedIn InMail messages or emails to distribute your personalised messages from within the pipeline platform.',
+    description: 'Import lead lists from conferences, campaigns, CRM then send LinkedIn InMail messages or emails from your company domain to distribute your personalised messages from within the pipeline platform.',
     icon: ServerIcon,
     image: "/featuretertiary.png"
   },
