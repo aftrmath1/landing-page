@@ -186,11 +186,11 @@ export default function PricingBody() {
                       Most popular
                     </p>
                   ) : null}
-                  {tier.comingSoon ? (
+                  {/* {tier.comingSoon ? (
                     <p className="rounded-full bg-primary px-2.5 py-1 text-xs font-semibold leading-5 text-white">
                       Coming Soon
                     </p>
-                  ) : null}
+                  ) : null} */}
                 </div>
                 <p className="mt-4 text-sm leading-6 text-gray-500">
                   {tier.description}
@@ -205,7 +205,8 @@ export default function PricingBody() {
                 </p>
                 {!tier.comingSoon ? (
                 <Link
-                  href={tier.href}
+                  // href={tier.href}
+                  href={"#"}
                   aria-describedby={tier.id}
                   className={classNames(
                     tier.mostPopular
@@ -217,19 +218,19 @@ export default function PricingBody() {
                     handleBuyPlanClick(tier.productId, tier.priceId)
                   }
                 >
-                  Buy plan
+                  Coming soon
                 </Link>
                 ) : (
                   <div
                   aria-describedby={tier.id}
                   className={classNames(
                     tier.mostPopular
-                      ? "bg-gray-700 text-white shadow-sm hover:opacity-50 focus-visible:outline-primary"
-                      : "bg-gray-700 hover:opacity-50 text-white focus-visible:outline-white",
+                      ? "bg-gray-900 text-white shadow-sm hover:opacity-50 focus-visible:outline-primary"
+                      : "bg-gray-900 hover:opacity-50 text-white focus-visible:outline-white",
                     "mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 duration-300 cursor-pointer"
                   )}
                 >
-                  Buy plan
+                  Coming soon
                 </div>
                 )}
                 <ul
