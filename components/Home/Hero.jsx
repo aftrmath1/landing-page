@@ -74,8 +74,7 @@ export default function Hero() {
               Sales reps shouldn't have to worry about writer's block.
             </h1>
             <p className="mt-6 text-lg leading-8 text-accent text-center md:text-left">
-              Pipeline finds you the perfect leads, writes cold emails that
-              sell, and runs your campaigns with smart AI.
+              Pipeline researches your leads, writes cold emails that sell, and runs your campaigns across multiple channels.
             </p>
           </div>
 
