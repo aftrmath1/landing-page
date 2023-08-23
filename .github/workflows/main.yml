@@ -14,20 +14,20 @@ jobs:
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:       
-    - name: Deploy using ssh
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USER }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: 22
-        script: |
-          cd /var/www/landing/
-          git pull origin production
-          git status
-          nvm use --lts
-          npm install --only=prod
-          npm run build
-          pm2 restart landing
-          systemctl restart nginx
+    steps:
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3.3.0
+        with:
+          node-version: 18
+      - name: Deploy using ssh
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            echo "Using Node.js $(node -v)"
+            source ~/.bashrc   # This is to make sure the updated Node.js version is available in the SSH session
+            node -v
+            ./deploy-landing.sh
