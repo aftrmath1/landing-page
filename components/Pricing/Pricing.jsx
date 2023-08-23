@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Dialog, RadioGroup } from "@headlessui/react";
+import { RadioGroup } from "@headlessui/react";
 import { CheckIcon } from "@heroicons/react/20/solid";
 import { loadStripe } from "@stripe/stripe-js";
 import Link from "next/link";
+import CTA from '../CTA'
 
 let stripePromise;
 const getStripe = () => {
@@ -251,6 +252,7 @@ export default function PricingBody() {
             ))}
           </div>
         </div>
+        <CTA/>
       </main>
     </div>
   );

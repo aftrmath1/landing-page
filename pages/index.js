@@ -4,7 +4,7 @@ import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/2
 import Stats from '../components/Home/Stats'
 import Testimonials from '../components/Home/Testimonials'
 import LogoCloud from '../components/Home/LogoCloud'
-import CTA from '../components/Home/CTA'
+import CTA from '../components/CTA'
 
 
 const features = [
