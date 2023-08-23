@@ -147,7 +147,7 @@ export default function PricingBody() {
                   }
                 >
                   {option.label == "Annually" ? (
-                    <div className="flex justify-center items-center gap-x-5">
+                    <div className="flex justify-center items-center gap-x-2">
                       <p>Annually</p>
                       <p className="bg-yellow-200 text-yellow-800 rounded-3xl px-2 py-1 text-xs 2xl:text-sm">
                         Save 20%
