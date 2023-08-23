@@ -19,6 +19,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3.3.0
       with:
@@ -34,8 +35,7 @@ jobs:
           cd /var/www/landing/
           git pull origin production
           git status
-          nvm use --lts
-          npm install --only=prod
+          npm install
           npm run build
           pm2 restart landing
           systemctl restart nginx
