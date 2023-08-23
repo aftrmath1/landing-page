@@ -12,16 +12,13 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x, 14.x, 16.x, 18.x]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 18
         uses: actions/setup-node@v3.3.0
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 18
       - name: Deploy using ssh
         uses: appleboy/ssh-action@master
         with:
@@ -30,5 +27,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
+            echo "Using Node.js $(node -v)"
+            source ~/.bashrc   # This is to make sure the updated Node.js version is available in the SSH session
             node -v
             ./deploy-landing.sh
