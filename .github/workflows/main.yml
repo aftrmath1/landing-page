@@ -26,6 +26,7 @@ jobs:
           cd /var/www/landing/
           git pull origin production
           git status
+          nvm use --lts
           npm install --only=prod
           npm run build
           pm2 restart landing
