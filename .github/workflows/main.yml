@@ -22,7 +22,7 @@ jobs:
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3.3.0
         with:
-          node-version: '16.x'
+          node-version: 14
       - name: Deploy using ssh
         uses: appleboy/ssh-action@master
         with:
@@ -31,6 +31,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            ~/.nvm/nvm.sh use --lts
             node -v
             ./deploy-landing.sh
