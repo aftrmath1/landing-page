@@ -32,30 +32,28 @@ export default function Stats() {
   return (
     <div className="py-24 sm:py-32 max-w-7xl mx-auto px-5 md:px-10">
       <div className="">
-        <div className="">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Write emails that sell.
-          </h2>
-        </div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-16 lg:mt-16 lg:max-w-none">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-            {features.map((feature) => (
-              <div key={feature.name} className="flex flex-col">
-                <dt className="text-xl font-semibold leading-7 text-gray-900">
-                  {feature.name}
-                </dt>
-                <div className="mt-1 flex items-center space-x-5">
-                  <h1 className="text-5xl font-bold text-primary">{feature.value}x</h1>
-                  {feature.increase ? (
-                    <FiTrendingUp className="text-indigo-700 text-4xl" />
-                  ) : (
-                    <FiTrendingDown className="text-red-500 text-4xl" />
-                  )}
-                </div>
+        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          Write emails that sell.
+        </h2>
+      </div>
+      <div className="mx-auto  w-full mt-16 max-w-2xl sm:mt-16 lg:mt-16 lg:max-w-none">
+        <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+          {features.map((feature) => (
+            <div key={feature.name} className="flex flex-col">
+              <dt className="text-xl font-semibold leading-7 text-gray-900">
+                {feature.name}
+              </dt>
+              <div className="mt-1 flex items-center space-x-5">
+                <h1 className="text-5xl font-bold text-primary">{feature.value}x</h1>
+                {feature.increase ? (
+                  <FiTrendingUp className="text-indigo-700 text-4xl" />
+                ) : (
+                  <FiTrendingDown className="text-red-500 text-4xl" />
+                )}
               </div>
-            ))}
-          </dl>
-        </div>
+            </div>
+          ))}
+        </dl>
       </div>
     </div>
   );

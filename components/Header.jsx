@@ -58,16 +58,16 @@ export default function Header() {
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   return (
     <>
-      <nav className="navbar bg-white flex px-16 items-center py-4">
+      <nav className="navbar absolute  z-10 flex px-28 items-center py-4">
         <div className="space-x-8 flex-1">
           <Link href="/">
-            <img src="/logo.png" height={48} width={48} />
+            <img src="/logo2.png" height={48} width={48} />
           </Link>
 
           {links.map((link) => (
             <Link
               href={link.href}
-              className="text-primary font-semibold md:block hidden"
+              className="text-white md:block hidden"
               key={link.name}
             >
               {link.name}
@@ -77,12 +77,12 @@ export default function Header() {
         <div className="flex-none space-x-8 md:block hidden">
           <Link
             href="https://app.buildpipeline.ai"
-            className="text-primary font-semibold"
+            className="text-white"
           >
             Sign In
           </Link>
           <Link
-            className="btn btn-primary text-white capitalize"
+            className="btn bg-white text-[#3e1344] hover:bg-gray-200 border-none px-8 capitalize"
             href="/pricing"
           >
             Get Started
@@ -104,7 +104,7 @@ export default function Header() {
             <li key={link.name} className="w-full flex flex-col">
               <Link
                 href={link.href}
-                className="text-primary font-semibold mb-2"
+                className="text-white mb-2"
               >
                 {link.name}
               </Link>
@@ -113,9 +113,9 @@ export default function Header() {
               )}
             </li>
           ))}
-          <span className="text-gray-400 font-semibold text-center">
+          <span className="text-gray-400 text-center">
             Existing customer?{" "}
-            <Link href="https://app.buildpipeline.ai" className="text-primary">
+            <Link href="https://app.buildpipeline.ai" className="text-white">
               Sign In
             </Link>
           </span>

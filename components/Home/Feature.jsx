@@ -9,7 +9,7 @@ export default function Feature({ title, description, image, alternate }) {
             {isAlternate ? (
               <>
                 <div className="sm:px-6 lg:px-0">
-                  <div className={`shadow-lg relative isolate overflow-hidden ${isAlternate ? 'bg-indigo-500' : 'bg-gray-800'} px-6 pt-8 sm:mx-auto sm:max-w-2xl rounded-xl sm:pt-16 sm:pl-16 sm:pr-0 lg:mx-0 lg:max-w-none`}>
+                  <div className={`shadow-lg relative isolate overflow-hidden ${isAlternate ? 'bg-[#3e1344]' : 'bg-[#3e1344]'} px-6 pt-8 sm:mx-auto sm:max-w-2xl rounded-xl sm:pt-16 sm:pl-16 sm:pr-0 lg:mx-0 lg:max-w-none`}>
                     {isAlternate && (
                       <div
                         className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-inset ring-white"
@@ -45,10 +45,10 @@ export default function Feature({ title, description, image, alternate }) {
                   </div>
                 </div>
                 <div className={`sm:px-6 lg:px-0`}>
-                  <div className={`shadow-lg relative isolate overflow-hidden ${isAlternate ? 'bg-indigo-500' : 'bg-gray-800'} px-6 pt-8 sm:mx-auto sm:max-w-2xl rounded-xl sm:pt-16 sm:pl-16 sm:pr-0 lg:mx-0 lg:max-w-none`}>
+                  <div className={`shadow-lg relative isolate overflow-hidden ${isAlternate ? 'bg-[#3e1344]' : 'bg-[#3e1344]'} px-6 pt-8 sm:mx-auto sm:max-w-2xl rounded-xl sm:pt-16 sm:pl-16 sm:pr-0 lg:mx-0 lg:max-w-none`}>
                     {isAlternate && (
                       <div
-                        className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-inset ring-white"
+                        className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] opacity-20 ring-1 ring-inset ring-white"
                         aria-hidden="true"
                       />
                     )}
@@ -56,7 +56,7 @@ export default function Feature({ title, description, image, alternate }) {
                       <img
                         src={image}
                         alt="Product screenshot"
-                          className="w-[40rem] mb-10 max-w-none rounded-tl-xl bg-gray-800 "
+                          className="w-[40rem] mb-10 max-w-none rounded-tl-xl "
                       />
                     </div>
                     <div
