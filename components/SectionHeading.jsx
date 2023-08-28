@@ -6,12 +6,12 @@ export default function SectionHeading({ title, subtitle = "" }) {
           <div className="relative">
             <div className="absolute inset-x-0 bottom-0 h-1/2" />
             <div className="">
-              <div className="relative shadow-xl sm:overflow-hidden">
+              <div className="relative py-10 shadow-xl sm:overflow-hidden">
                 <div className="absolute inset-0">
                   <div className="absolute inset-0 mix-blend-multiply bg-primary bg-gradient-to-br from-primary to-purple-400" />
                 </div>
                 <svg
-                  className="z-10 absolute inset-0 -z-10 h-full w-full stroke-primary [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+                  className="absolute inset-0 h-full w-full stroke-primary [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
                   aria-hidden="true"
                 >
                   <defs>

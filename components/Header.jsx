@@ -58,8 +58,8 @@ export default function Header() {
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   return (
     <>
-      <nav className="navbar absolute  z-10 flex px-28 items-center py-4">
-        <div className="space-x-8 flex-1">
+      <nav className="absolute justify-between max-w-7xl mx-auto top-0 px-10 left-0 right-0 z-10 flex items-center py-4">
+        <div className="space-x-8 flex items-center">
           <Link href="/">
             <img src="/logo2.png" height={48} width={48} />
           </Link>
@@ -82,7 +82,7 @@ export default function Header() {
             Sign In
           </Link>
           <Link
-            className="btn bg-white text-[#3e1344] hover:bg-gray-200 border-none px-8 capitalize"
+            className="btn bg-white text-primary hover:bg-gray-200 border-none px-8 capitalize"
             href="/pricing"
           >
             Get Started
