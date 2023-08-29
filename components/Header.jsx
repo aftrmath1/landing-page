@@ -58,7 +58,7 @@ export default function Header() {
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   return (
     <>
-      <nav className="absolute justify-between max-w-7xl mx-auto top-0 px-10 left-0 right-0 z-10 flex items-center py-4">
+      <nav className="absolute rounded-xl justify-between bg-purple-900 bg-opacity-70 max-w-2xl mx-auto top-2 px-10 left-0 right-0 z-10 flex items-center py-4">
         <div className="space-x-8 flex items-center">
           <Link href="/">
             <img src="/logo2.png" height={48} width={48} />
