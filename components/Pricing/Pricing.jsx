@@ -76,6 +76,7 @@ const pricing = {
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
+
 export default function PricingBody() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [frequency, setFrequency] = useState(pricing.frequencies[0]);
