@@ -80,7 +80,7 @@ export default function Hero() {
               clipPath="url(#2ade4387-9c63-4fc4-b754-10e687a0d332)"
             >
               <img
-                src="https://tailwindui.com/img/component-images/mobile-app-screenshot.png"
+                src="/insights.png"
                 alt=""
               />
             </foreignObject>

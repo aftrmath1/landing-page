@@ -9,8 +9,8 @@ export default function Testimonials() {
       <div className="flex flex-wrap lg:flex-nowrap justify-center gap-x-12 gap-y-12 ">
         {testimonials.map(testimonial => {
           return (
-            <blockquote key={testimonial.name} className="md:flex rounded-lg md:flex-grow md:flex-col px-16 py-20 bg-background shadow-lg hover:scale-[1.02] hover:cursor-pointer duration-500 ">
-              <div className="relative text-md font-medium text-gray-600 md:flex-grow">
+            <blockquote key={testimonial.name} className="md:flex rounded-lg md:flex-grow md:flex-col px-16 py-20 bg-[#5F3D69] shadow-lg hover:scale-[1.02] hover:cursor-pointer duration-500 ">
+              <div className="relative text-md font-medium text-white md:flex-grow">
                 <p className="relative">{testimonial.quote}</p>
               </div>
               <footer className="mt-8">
@@ -23,10 +23,10 @@ export default function Testimonials() {
                     />
                   </div>
                   <div className="ml-4">
-                    <div className="text-base font-medium text-gray-900">
+                    <div className="text-base font-medium text-white">
                       {testimonial.name}
                     </div>
-                    <div className="text-base font-medium text-primary text-sm">
+                    <div className="text-base font-medium text-gray-200 text-sm">
                       {testimonial.info}
                     </div>
                   </div>
