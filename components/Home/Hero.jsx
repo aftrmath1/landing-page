@@ -2,7 +2,7 @@ import { Link, animateScroll as scroll } from "react-scroll";
 
 export default function Hero() {
   return (
-    <div className="relative isolate overflow-hidden">
+    <div className="relative isolate overflow-hidden bg-primary">
       <div>
         <svg
           className="absolute inset-0 -z-10 h-full w-full stroke-gray-900 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
@@ -10,24 +10,26 @@ export default function Hero() {
         >
           <defs>
             <pattern
-              id="983e3e4c-de6d-4c3f-8d64-b9761d1534cc"
-              width={200}
-              height={200}
-              x="50%"
-              y={-1}
+              id="tiltedGrid"
+              width={115.47} // 100/cos(30) = 115.47
+              height={100}  // Keeping it 100 as we don't want any vertical change
+              patternTransform="skewX(-15)" // 30 degree skew to the left
               patternUnits="userSpaceOnUse"
             >
-              <path d="M.5 200V.5H200" fill="none" />
+              <line x1="0" y1="0" x2="0" y2={100} stroke="white" strokeWidth="1" />
+              <line x1="0" y1="0" x2={115.47} y2="0" stroke="white" strokeWidth="1" />
             </pattern>
           </defs>
           <rect
             width="100%"
             height="100%"
             strokeWidth={0}
-            fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)"
+            fill="url(#tiltedGrid)"
           />
         </svg>
-        <svg
+
+
+        {/* <svg
           viewBox="0 0 1108 632"
           aria-hidden="true"
           className="absolute top-10 left-[calc(50%-4rem)] -z-10 w-[69.25rem] max-w-none transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]"
@@ -50,10 +52,10 @@ export default function Hero() {
               <stop offset={1} stopColor="#5E17EB" />
             </linearGradient>
           </defs>
-        </svg>
+        </svg> */}
       </div>
 
-      <div className="mx-auto max-w-7xl pb-20 sm:pb-8 lg:flex lg:pb-32 px-6 lg:px-8 md:h-screen md:flex md:items-center">
+      <div className="mx-auto max-w-7xl pb-20 sm:pb-8 lg:flex lg:pb-32 px-6 lg:px-8 md:h-screen md:flex md:items-center pt-32">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0  lg:pt-8">
           {/* <div className="mt-24 sm:mt-32 lg:mt-16">
             <a
@@ -70,10 +72,10 @@ export default function Hero() {
           </div> */}
 
           <div className="">
-            <h1 className="mt-10 text-4xl font-bold tracking-tight text-black sm:text-6xl text-center md:text-left">
-              Sales reps shouldn't have to worry about writer's block.
+            <h1 className="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl text-center md:text-left">
+              Sales reps shouldn't have to worry about <span className="highlight">writer's block</span>.
             </h1>
-            <p className="mt-6 text-lg leading-8 text-accent text-center md:text-left">
+            <p className="mt-6 text-lg leading-8 text-white/200 text-center md:text-left">
               Pipeline researches your leads, writes cold emails that sell, and runs your campaigns across multiple channels.
             </p>
           </div>
@@ -81,7 +83,7 @@ export default function Hero() {
           <div className="mt-10 flex justify-center md:justify-normal items-center gap-x-6">
             <Link
               href="/pricing"
-              className="rounded-md bg-primary hover:opacity-80 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+              className="rounded-md bg-white hover:opacity-80 px-3.5 py-1.5 text-base font-semibold leading-7 text-primary shadow-sm duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
             >
               Get started
             </Link>
@@ -90,7 +92,7 @@ export default function Hero() {
               to="features"
               smooth={true}
               duration={600}
-              className="hover:cursor-pointer text-base font-semibold leading-7 text-primary hover:translate-x-2 duration-200 ease-in-out"
+              className="hover:cursor-pointer text-base text-white leading-7 text-primary hover:translate-x-2 duration-200 ease-in-out"
             >
               Learn more <span aria-hidden="true">→</span>
             </Link>
@@ -103,18 +105,18 @@ export default function Hero() {
               alt="App screenshot"
               width={2032}
               height={1042}
-              className="w-[55rem] rounded-md bg-white/5"
+              className="w-[55rem] rounded-md"
             />
           </div>
         </div>
 
         <div className="block sm:hidden my-24">
           <img
-            src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
+            src="/insights.png"
             alt="App screenshot"
             width={2432}
             height={1442}
-            className="w-[76rem] rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10"
+            className="w-[76rem] rounded-md"
           />
         </div>
       </div>
