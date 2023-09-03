@@ -40,9 +40,13 @@ const solutions = [
 ];
 
 const links = [
+  // {
+  //   name: "Pricing",
+  //   href: "/pricing",
+  // },
   {
-    name: "Pricing",
-    href: "/pricing",
+    name: "About",
+    href: "/about",
   },
   {
     name: "Contact",
@@ -76,17 +80,17 @@ export default function Header() {
         </div>
         <div className="flex-none space-x-8 md:block hidden">
           <Link
-            href="https://app.buildpipeline.ai"
+            href="https://buildpipeline.netlify.app/"
             className="text-white"
           >
             Sign In
           </Link>
-          <Link
+          <a
             className="btn bg-white text-primary hover:bg-gray-200 border-none px-8 capitalize"
-            href="/pricing"
+            href="https://6rhfm8w2z0h.typeform.com/to/EkwMXxpe"
           >
             Get Started
-          </Link>
+          </a>
         </div>
         <label className="swap swap-rotate p-1 rounded-xl hover:bg-gray-100 transition hover:scale-105 text-gray-500 md:hidden inline-grid flex-none">
           <input
@@ -115,13 +119,13 @@ export default function Header() {
           ))}
           <span className="text-gray-400 text-center">
             Existing customer?{" "}
-            <Link href="https://app.buildpipeline.ai" className="text-white">
+            <Link href="https://buildpipeline.netlify.app/" className="text-white">
               Sign In
             </Link>
           </span>
-          <Link href="/pricing" className="btn btn-primary text-white mt-auto">
+          <a href="https://6rhfm8w2z0h.typeform.com/to/EkwMXxpe" className="btn btn-primary text-white mt-auto">
             Get Started
-          </Link>
+          </a>
         </ul>
       )}
     </>

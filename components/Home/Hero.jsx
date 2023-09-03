@@ -81,12 +81,12 @@ export default function Hero() {
           </div>
 
           <div className="mt-10 flex justify-center md:justify-normal items-center gap-x-6">
-            <Link
-              href="/pricing"
+            <a
+              href="https://6rhfm8w2z0h.typeform.com/to/EkwMXxpe"
               className="rounded-md bg-white hover:opacity-80 px-3.5 py-1.5 text-base font-semibold leading-7 text-primary shadow-sm duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
             >
               Get started
-            </Link>
+            </a>
 
             <Link
               to="features"
@@ -101,18 +101,18 @@ export default function Hero() {
         <div className="hidden sm:block mx-auto pt-12 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mt-0 lg:mr-0 lg:max-w-none lg:flex-none xl:ml-32">
           <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
             <img
-              src="/insights.png"
+              src="/insights.svg"
               alt="App screenshot"
-              width={2032}
-              height={1042}
-              className="w-[55rem] rounded-md"
+              width={2232}
+              height={1242}
+              className="w-[62rem] rounded-md"
             />
           </div>
         </div>
 
         <div className="block sm:hidden my-24">
           <img
-            src="/insights.png"
+            src="/insights.svg"
             alt="App screenshot"
             width={2432}
             height={1442}
