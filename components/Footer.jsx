@@ -6,7 +6,7 @@ const navigation = {
     { name: 'Terms', href: '/terms-and-conditions' },
     { name: 'Privacy', href: '/privacy-policy' },
     { name: 'LinkedIn', href: 'https://www.linkedin.com/company/pipeline-ai-company/about/' },
-    { name: 'Contact', href: '/mailto:support@buildpipeline.ai' },
+    { name: 'Contact', href: 'https://6rhfm8w2z0h.typeform.com/to/EkwMXxpe' },
   ],
   // social: [
   //   {

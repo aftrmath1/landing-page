@@ -50,7 +50,7 @@ const links = [
   },
   {
     name: "Contact",
-    href: "/contact-us",
+    href: "https://6rhfm8w2z0h.typeform.com/to/EkwMXxpe",
   },
 ];
 
