@@ -204,6 +204,11 @@ export default function PricingBody() {
                     {frequency.priceSuffix}
                   </span>
                 </p>
+                {frequency.label === "Annually" && (
+                <p className="mt-2 text-xs text-gray-400">
+                  * Billed annually
+                </p>
+              )}
                 {!tier.comingSoon ? (
                 <Link
                   // href={tier.href}

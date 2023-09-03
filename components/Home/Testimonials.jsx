@@ -18,7 +18,8 @@ export default function Testimonials() {
                   <div className="inline-flex flex-shrink-0">
                     <img
                       className="h-12 w-12 rounded-full"
-                      src={testimonial.pfp}
+                      // src={testimonial.pfp}
+                      src="/logo2.png"
                       alt="Profile picture for $testimonial.name"
                     />
                   </div>

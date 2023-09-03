@@ -2,7 +2,7 @@
 const navigation = {
   main: [
     { name: 'About', href: '/about' },
-    { name: 'Pricing', href: '/pricing' },
+    // { name: 'Pricing', href: '/pricing' },
     { name: 'Terms', href: '/terms-and-conditions' },
     { name: 'Privacy', href: '/privacy-policy' },
     { name: 'LinkedIn', href: 'https://www.linkedin.com/company/pipeline-ai-company/about/' },
@@ -81,7 +81,7 @@ export default function Footer() {
         <nav className="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
           {navigation.main.map((item) => (
             <div key={item.name} className="px-5 py-2">
-              <a href={item.href} className="text-base text-gray-500 hover:text-gray-900 text-sm">
+              <a href={item.href} target="_blank" rel="noreferrer" className="text-base text-gray-500 hover:text-gray-900 text-sm">
                 {item.name}
               </a>
             </div>
