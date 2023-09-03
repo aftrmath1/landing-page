@@ -12,7 +12,7 @@ export default function CTA() {
           Say goodbye to boring, generic email templates
          </p>
          <Link
-           href="/contact-us"
+           href="https://6rhfm8w2z0h.typeform.com/to/EkwMXxpe"
            className="my-5 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50 sm:w-auto"
          >
            Contact Us
