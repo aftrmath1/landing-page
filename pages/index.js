@@ -19,13 +19,13 @@ const features = [
     description:
       'Pipeline understands your prospects and can translate your unique value proposition into messaging that resonates with each individual buyer.   It can generate these messages for 1000\’s of prospects, at once.',
     icon: CloudArrowUpIcon,
-    image: "/featuresecondary.png",
+    image: "/featuresecondary.svg",
   },
   {
     name: 'Infinitely scale your outreach across multiple channels.',
     description: 'Import lead lists from conferences, campaigns, CRM then send LinkedIn InMail messages or emails from your company domain to distribute your personalised messages from within the pipeline platform.',
     icon: ServerIcon,
-    image: "/featuretertiary.png"
+    image: "/featuretertiary.svg"
   },
 ]
 
